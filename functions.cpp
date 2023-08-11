@@ -1,5 +1,6 @@
 #include "functions.h"
 #include <Windows.h>
+#include <stdio.h>
 
 void gotoxy(int x, int y)
 {
@@ -19,4 +20,24 @@ void hideCursor()
     cci.dwSize = 2;
     cci.bVisible = false;
     SetConsoleCursorInfo(hCon, &cci);
+}
+
+void pintar_limites() 
+{
+    for (int i = 2; i < 77; i++)
+    {
+        gotoxy(i,3); printf("%c",205);
+        gotoxy(i,23);printf("%c",205);
+    }
+
+    for (int i = 4; i < 23; i++) 
+    {
+        gotoxy(2,i); printf("%c",186);
+        gotoxy(77,i); printf("%c",186);
+    }
+
+    gotoxy(2,3); printf("%c",201);
+    gotoxy(2,33); printf("%c",201);
+    gotoxy(77,3); printf("%c",201);
+    gotoxy(77,33); printf("%c",201);
 }

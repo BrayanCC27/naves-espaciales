@@ -5,12 +5,13 @@ class Nave {
 private:
     int x;
     int y;
+    int hearts;
 public:
-    Nave(int x, int y);
+    Nave(int x, int y, int hearts);
     void draw();
     void del();
     void move();
-    void draw();
+    void draw_hearts();
 };
 
 #endif
